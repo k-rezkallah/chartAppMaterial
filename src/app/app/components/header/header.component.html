@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="navbar">
+  <div class="app-title">
+    <mat-icon>supervised_user_circle</mat-icon>
+    Chart App
+  </div>
+  <div>
+    <span
+      ><a
+        routerLink="/viewmode"
+        [ngClass]="{ active: (activeUrl$ | async) === '/viewmode' }"
+        >View Mode
+      </a></span
+    >
+    <span
+      ><a
+        routerLink="/settings"
+        [ngClass]="{ active: (activeUrl$ | async) === '/settings' }"
+        >Settings</a
+      ></span
+    >
+  </div>
+</mat-toolbar>

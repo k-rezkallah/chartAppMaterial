@@ -1,0 +1,25 @@
+.charts {
+  width: 100%;
+  // background-color: #f5f5f5;
+}
+app-chart {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  padding: 10px;
+  display: inline-block;
+  width: inherit;
+  max-width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: rgb(191 201 255 / 21%);
+}
+
+@media (min-width: 654) {
+  .charts {
+    width: 100%;
+    // background-color: #f5f5f5;
+  }
+  app-chart {
+    width: 100% !important;
+  }
+}

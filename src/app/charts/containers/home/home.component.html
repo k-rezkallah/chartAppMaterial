@@ -1,0 +1,19 @@
+<div class="home-container">
+  <app-daterange
+    *ngIf="(noData$ | async) && !(isSettings$ | async)"
+    class="date-range"
+    (fromToDate)="getFromToDate($event)"
+    [initialDate]="initialFromToDate"
+  ></app-daterange>
+
+  <app-setting
+    *ngIf="isSettings$ | async"
+    (addingChart)="addChartEvent($event)"
+  ></app-setting>
+
+  <hr />
+  <app-charts-container></app-charts-container>
+  <p *ngIf="!(noData$ | async)">
+    Ooops! no charts... Please add some charts for your app...
+  </p>
+</div>

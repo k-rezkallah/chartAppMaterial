@@ -1,0 +1,28 @@
+<div class="chart">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    style="width: 100%; height: 100%; display: inline-block"
+  ></highcharts-chart>
+  <button
+    *ngIf="showSettings"
+    (click)="removingChart()"
+    mat-stroked-button
+    color="warn"
+  >
+    <mat-icon
+      aria-hidden="false"
+      aria-label="delete chart"
+      fontIcon="delete"
+    ></mat-icon>
+    Remove
+  </button>
+  <button *ngIf="showSettings" (click)="updatingChart()" mat-stroked-button>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Edit chart"
+      fontIcon="edit"
+    ></mat-icon>
+    Edit
+  </button>
+</div>

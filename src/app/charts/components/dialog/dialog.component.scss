@@ -1,0 +1,15 @@
+mat-form-field {
+  display: block;
+}
+
+.dataform button,
+.dataform mat-form-field {
+  display: inline-block;
+  margin-right: 5px;
+}
+.dataform mat-form-field {
+  width: 35%;
+}
+.dataform button {
+  margin: 10px auto;
+}

@@ -1,0 +1,109 @@
+<h2 mat-dialog-title>{{ isUpdate ? "Update Your " : "Set New " }} Chart</h2>
+<mat-dialog-content>
+  <form [formGroup]="chartForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="Give it a title" />
+      <mat-error *ngIf="chartForm.get('title')?.hasError('required')">
+        This field is required
+      </mat-error>
+      <mat-error *ngIf="chartForm.get('title')?.hasError('minlength')">
+        Title too short
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Name of Data" />
+      <mat-error *ngIf="chartForm.get('name')?.hasError('required')">
+        This field is required
+      </mat-error>
+      <mat-error *ngIf="chartForm.get('name')?.hasError('minlength')">
+        Name too short
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type" placeholder="Select a type...">
+        <mat-option value="line">Line</mat-option>
+        <mat-option value="spline">Spline</mat-option>
+        <mat-option value="area">Area</mat-option>
+        <mat-option value="column">Column</mat-option>
+        <mat-option value="bar">Bar</mat-option>
+        <mat-option value="pie">pie</mat-option>
+        <mat-option value="scatter">Scatter</mat-option>
+        <mat-option value="gauge">Gauge</mat-option>
+        <mat-option value="areaspline">Areaspline</mat-option>
+        <!-- <mat-option value="arearange">Arearange</mat-option> -->
+        <!-- <mat-option value="areasplinerange">Areasplinerange</mat-option> -->
+        <mat-option value="columnrange">Collumnrange</mat-option>
+      </mat-select>
+      <mat-error *ngIf="chartForm.get('type')?.hasError('required')">
+        This field is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Color</mat-label>
+      <input
+        matInput
+        [ngxMatColorPicker]="picker"
+        formControlName="color"
+        [disabled]="disabled"
+        placeholder="Default: white"
+      />
+      <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>
+      <ngx-mat-color-picker
+        #picker
+        [touchUi]="touchUi"
+        [color]="colorPalette"
+      ></ngx-mat-color-picker>
+    </mat-form-field>
+
+    <div class="dataform">
+      <mat-form-field appearance="fill" class="example-form-field">
+        <mat-label>Date</mat-label>
+        <input matInput formControlName="date" [matDatepicker]="datepicker" />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="datepicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #datepicker> </mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Value</mat-label>
+        <input
+          formControlName="value"
+          type="number"
+          matInput
+          placeholder="Value"
+        />
+      </mat-form-field>
+      <button mat-stroked-button color="accent" (click)="addDateValue()">
+        Add
+      </button>
+    </div>
+  </form>
+  <mat-form-field appearance="fill">
+    <mat-label>Add at least a pair of Data *</mat-label>
+    <textarea
+      matInput
+      [value]="listDateValue ? (listDateValue | json) : ''"
+      disabled
+    ></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button
+    mat-flat-button
+    (click)="addChart()"
+    cdkFocusInitial
+    [disabled]="!(chartForm.valid && listDateValue)"
+  >
+    save
+  </button>
+  <button mat-flat-button mat-dialog-close>close</button>
+</mat-dialog-actions>

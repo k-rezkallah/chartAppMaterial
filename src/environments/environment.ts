@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:3000/charts/',
+  initialDateRange: {
+    from: '01/01/2013',
+    to: '12/31/2022',
+  },
 };
 
 /*

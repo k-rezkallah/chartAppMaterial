@@ -1,0 +1,23 @@
+.navbar {
+  justify-content: space-between;
+}
+
+span {
+  padding-right: 1rem;
+}
+
+span a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+a.active {
+  color: #cdec71 !important;
+}
+
+a:hover {
+  color: #b7c099 !important;
+}
+.app-title {
+  color: #c7e07b;
+}

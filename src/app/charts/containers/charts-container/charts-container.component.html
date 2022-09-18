@@ -1,0 +1,9 @@
+<div class="charts">
+  <app-chart
+    *ngFor="let chart of charts$ | async"
+    [chart]="chart"
+    (updateChart)="updateChart($event)"
+    (removeChart)="removeChart($event)"
+    [showSettings]="(isSettings$ | async)!"
+  ></app-chart>
+</div>
