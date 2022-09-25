@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chartappmaterial": {
+      "hosting": {
+        "chartAppMaterial": [
+          "chartappmaterial"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chartappmaterial"
+  }
+}

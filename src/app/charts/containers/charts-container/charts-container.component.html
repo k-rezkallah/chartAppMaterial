@@ -1,9 +1,18 @@
 <div class="charts">
-  <app-chart
-    *ngFor="let chart of charts$ | async"
-    [chart]="chart"
-    (updateChart)="updateChart($event)"
-    (removeChart)="removeChart($event)"
-    [showSettings]="(isSettings$ | async)!"
-  ></app-chart>
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="33%"
+      fxFlex.xs="100%"
+      fxFlex.sm="50%"
+      fxFlexFill
+      *ngFor="let chart of charts$ | async"
+    >
+      <app-chart
+        [chart]="chart"
+        (updateChart)="updateChart($event)"
+        (removeChart)="removeChart($event)"
+        [showSettings]="(isSettings$ | async)!"
+      ></app-chart>
+    </div>
+  </div>
 </div>

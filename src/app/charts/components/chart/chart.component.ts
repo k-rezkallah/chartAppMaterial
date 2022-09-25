@@ -54,7 +54,7 @@ export class ChartComponent implements OnInit {
         type: graphType,
       },
       title: {
-        text: title,
+        text: '', // we show the tile in the card header instead
       },
       xAxis: {
         categories: [...Object.keys(data)],

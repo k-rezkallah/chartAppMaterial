@@ -5,3 +5,14 @@
 button {
   margin-right: 10px;
 }
+
+.card-title-wrapper {
+  overflow: hidden;
+  // text-align: center;// because the body aligned to center
+}
+
+.mycard-title {
+  white-space: nowrap; // to prevent long text lines break to new line
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

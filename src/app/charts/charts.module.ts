@@ -37,6 +37,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { MatCardModule } from '@angular/material/card';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 export const ROUTES: Routes = [
   {
@@ -74,6 +75,7 @@ export const ROUTES: Routes = [
     MatIconModule,
 
     NgxMatColorPickerModule,
+    FlexLayoutModule,
   ],
   declarations: [
     ...fromContainers.components,
